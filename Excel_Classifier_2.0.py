@@ -38,6 +38,7 @@ row_begin_output_loop = row_begin_output#内层循环
 row_end_output_loop = row_end_output#内层循环
 
 print("")
+times = 1
 
 for i in range(row_begin_source_loop , row_end_source_loop + 1):#在输入文件中遍历
     index_ground_source = adder(col_index , row_begin_source)#获取判断依据在输入文件中的坐标
@@ -49,6 +50,10 @@ for i in range(row_begin_source_loop , row_end_source_loop + 1):#在输入文件
         ground_output = shto.range(index_ground_output).value#获取在输出文件中的判断依据
 
         if ground_output == ground_source:
+            print("[Time " , end = '')
+            print(times , end == '')
+            print("]")
+            
             output_range_left = adder(col_left , row_begin_output_process)
             output_range_right = adder(col_right , row_begin_output_process)
             output_range = output_range_left + ":" + output_range_right#获得输出范围
@@ -63,6 +68,7 @@ for i in range(row_begin_source_loop , row_end_source_loop + 1):#在输入文件
             print("")
 
             shto.range(output_range).value = shts.range(source_range).value#输出数据
+            times = times + 1
             break
 
         row_begin_output_process = row_begin_output_process + 1#输出文件的换行

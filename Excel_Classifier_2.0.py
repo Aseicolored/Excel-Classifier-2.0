@@ -51,7 +51,7 @@ for i in range(row_begin_source_loop , row_end_source_loop + 1):#在输入文件
 
         if ground_output == ground_source:
             print("[Time " , end = '')
-            print(times , end == '')
+            print(times , end = '')
             print("]")
             
             output_range_left = adder(col_left , row_begin_output_process)
